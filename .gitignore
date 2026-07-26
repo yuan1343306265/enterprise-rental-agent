@@ -1,0 +1,31 @@
+# 环境变量和密钥
+.env
+!.env.example
+
+#python缓存
+__pycache__/
+*.py[cod]
+
+#pytest缓存
+.pytest_cache/
+
+#虚拟环境
+.venv/
+venv/
+
+#SQLite数据
+*.db
+*.sqlite
+*.sqlite3
+
+
+#日志
+logs/
+*.log
+
+#VS Code本地设置
+.vscode/
+
+#Windows系统文件
+Thumbs.db
+Desktop.ini
