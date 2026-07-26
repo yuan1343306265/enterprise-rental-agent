@@ -1,4 +1,5 @@
 # 企业级租房顾问 Agent
+![自动化测试](https://github.com/yuan1343306265/enterprise-rental-agent/actions/workflows/tests.yml/badge.svg)](https://github.com/yuan1343306265/enterprise-rental-agent/actions/workflows/tests.yml)
 
 一个基于 FastAPI、LangChain、DeepSeek 和 SQLAlchemy 构建的租房顾问 Agent。
 
