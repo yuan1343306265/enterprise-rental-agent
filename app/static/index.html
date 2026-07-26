@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    ><link rel="stylesheet" href="/static/styles.css">
+
+    <title>企业级租房顾问 Agent</title>
+
+    <script src="/static/app.js" defer></script>
+</head>
+
+<body>
+    <div class="app-shell">
+        <aside class="sidebar">
+            <div>
+                <p class="brand-label">RENTAL AGENT</p>
+                <h1>企业级租房顾问</h1>
+                <p class="brand-description">
+                    根据预算、区域、户型、宠物和通勤需求，为你查询合适房源。
+                </p>
+            </div>
+
+            <div class="session-card">
+                <span>当前会话</span>
+                <code id="sessionId">正在创建...</code>
+            </div>
+
+            <a
+                class="docs-link"
+                href="/docs"
+                target="_blank"
+            >
+                打开 API 文档
+            </a>
+        </aside>
+
+        <main class="chat-panel">
+            <header class="chat-header">
+                <div>
+                    <h2>租房咨询</h2>
+                    <p>告诉我你的需求，我会调用房源工具进行查询。</p>
+                </div>
+
+                <span class="online-status">服务在线</span>
+            </header>
+
+            <section
+                id="messageList"
+                class="message-list"
+            >
+                <article class="message assistant-message">
+                    <div class="message-role">租房顾问</div>
+                    <div class="message-content">
+                        你好，请告诉我你的预算、区域、户型、是否养宠物，以及最长通勤时间。
+                    </div>
+                </article>
+            </section>
+
+            <form
+                id="chatForm"
+                class="chat-form"
+            >
+                <textarea
+                    id="messageInput"
+                    rows="3"
+                    placeholder="例如：预算5000元，想在朝阳租一居室，可以养猫，通勤不超过40分钟。"
+                    required
+                ></textarea>
+
+                <button
+                    id="sendButton"
+                    type="submit"
+                >
+                    发送咨询
+                </button>
+            </form>
+
+            <p
+                id="statusText"
+                class="status-text"
+            >
+                可以开始咨询
+            </p>
+        </main>
+    </div>
+</body>
+</html>

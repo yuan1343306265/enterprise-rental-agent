@@ -22,6 +22,11 @@ from app.logging_config import logger
 
 import asyncio
 
+from pathlib import Path
+
+from fastapi.responses import FileResponse
+from fastapi.staticfiles import StaticFiles
+
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -33,6 +38,19 @@ app = FastAPI(
     title="企业级租房顾问 ",
     lifespan=lifespan,
 )
+
+BASE_DIR = Path(__file__).resolve().parent
+STATIC_DIR = BASE_DIR / "static"
+
+app.mount(
+    "/static",
+    StaticFiles(directory=STATIC_DIR),
+    name="static",
+)
+
+@app.get("/", include_in_schema=False)
+async def get_home_page():
+    return FileResponse(STATIC_DIR / "index.html")
 agent_semaphore = asyncio.Semaphore(5)
 
 
