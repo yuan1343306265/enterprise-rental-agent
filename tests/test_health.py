@@ -9,4 +9,11 @@ def test_health_check():
 
         assert response.status_code ==200
         assert"status" in response.json()
-        
+
+
+def test_home_page():
+    with TestClient(app) as client:
+        response = client.get("/")
+
+    assert response.status_code == 200
+    assert "企业级租房顾问" in response.text

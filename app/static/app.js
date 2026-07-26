@@ -4,6 +4,10 @@ const sendButton = document.getElementById("sendButton");
 const messageList = document.getElementById("messageList");
 const statusText = document.getElementById("statusText");
 const sessionIdElement = document.getElementById("sessionId");
+const newSessionButton = document.getElementById(
+    "newSessionButton"
+);
+
 
 const sessionStorageKey = "rental-agent-session-id";
 
@@ -133,3 +137,16 @@ messageInput.addEventListener("keydown", (event) => {
 });
 
 loadHistory();
+
+newSessionButton.addEventListener("click", () => {
+    const shouldCreateNewSession = window.confirm(
+        "确定要开始一个新的租房咨询吗？"
+    );
+
+    if (!shouldCreateNewSession) {
+        return;
+    }
+
+    localStorage.removeItem(sessionStorageKey);
+    window.location.reload();
+});
